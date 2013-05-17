@@ -126,7 +126,7 @@ module Peek
             output << "</div></div>" # .data then .peek-rblineprof-file
           end
 
-          response.body += "<div class='peek-rblineprof-modal' id='line-profile'>#{output}</div>".html_safe
+          ::Peek::Views::Rblineprof.profile = "<div class='peek-rblineprof-modal'>#{output}</div>".html_safe
         end
 
         ret
