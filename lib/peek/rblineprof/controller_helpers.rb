@@ -48,9 +48,9 @@ module Peek
         when 'views'
           %r{^#{escaped_rails_root}/app/view}
         when 'gems'
-          %r|^#{escaped_rails_root}/vendor/gems|
+          %r|^#{Bundler.bundle_path}|
         when 'all'
-          %r|^#{escaped_rails_root}|
+          %r{^(#{escaped_rails_root})|(#{Bundler.bundle_path})}
         when 'stdlib'
           %r|^#{Regexp.escape RbConfig::CONFIG['rubylibdir']}|
         else
