@@ -1,11 +1,11 @@
-<%= link_to 'Profile', :lineprofiler => true %>
+<%= link_to 'Profile', '', {"data-addparam-lineprofiler" => true} %>
 <div class="peek-dropdown">
   <ul>
-    <li><%= link_to 'app', :lineprofiler => 'app' %></li>
-    <li><%= link_to 'views', :lineprofiler => 'views' %></li>
-    <li><%= link_to 'gems', :lineprofiler => 'gems' %></li>
-    <li><%= link_to 'all', :lineprofiler => 'all' %></li>
-    <li><%= link_to 'stdlib', :lineprofiler => 'stdlib' %></li>
+    <li><%= link_to 'app', '', {"data-addparam-lineprofiler" => 'app'} %></li>
+    <li><%= link_to 'views', '', {"data-addparam-lineprofiler" => 'views'} %></li>
+    <li><%= link_to 'gems', '', {"data-addparam-lineprofiler" => 'gems'} %></li>
+    <li><%= link_to 'all', '', {"data-addparam-lineprofiler" => 'all'} %></li>
+    <li><%= link_to 'stdlib', '', {"data-addparam-lineprofiler" => 'stdlib'} %></li>
   </ul>
 </div>
 <div id="line-profile"></div>

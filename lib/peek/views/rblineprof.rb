@@ -5,7 +5,14 @@ module Peek
   module Views
     class Rblineprof < View
       class << self
-        attr_accessor :profile
+        attr_accessor :current
+      end
+
+      attr_accessor :profile
+
+      def initialize(*args)
+        super
+        self.class.current = self
       end
 
       def results
@@ -13,14 +20,9 @@ module Peek
       end
 
       def context
-        {:profile => self.class.profile}
-      end
-
-      def setup_subscribers
-        # Reset each counter when a new request starts
-        before_request do
-          ::Peek::Views::Rblineprof.profile = nil
-        end
+        {
+          :profile => self.profile
+        }
       end
     end
   end
