@@ -4,8 +4,8 @@ module Peek
   module Rblineprof
     class Railtie < ::Rails::Engine
       initializer 'peek.rblineprof.include_controller_helpers' do
-        ActiveSupport.on_load(:action_controller) do
-          include Peek::Rblineprof::ControllerHelpers
+        config.to_prepare do
+          ApplicationController.send(:include, Peek::Rblineprof::ControllerHelpers)
         end
       end
     end
